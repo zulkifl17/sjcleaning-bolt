@@ -81,7 +81,7 @@ const HeroSection: React.FC = () => {
               }}
             >
               <img
-                src="https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="hero-3.png"
                 alt="Professional cleaning service"
                 className="w-full h-[500px] lg:h-[600px] object-cover"
               />

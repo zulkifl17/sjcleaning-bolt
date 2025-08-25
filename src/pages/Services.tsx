@@ -11,7 +11,7 @@ const Services: React.FC = () => {
       icon: Home,
       title: "Residential Cleaning",
       description: "Complete home cleaning services designed to keep your living space fresh, healthy, and welcoming. We handle everything from regular maintenance to deep cleaning sessions.",
-      image: "https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "residance.png",
       features: [
         "Living rooms and bedrooms deep cleaning",
         "Kitchen appliances and surfaces sanitization", 
@@ -26,7 +26,7 @@ const Services: React.FC = () => {
       icon: Building2,
       title: "Commercial Cleaning",
       description: "Professional office and commercial space cleaning services that create a productive and healthy work environment for your employees and clients.",
-      image: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "hero-3.png",
       features: [
         "Office spaces and workstations",
         "Meeting and conference rooms",
@@ -41,7 +41,7 @@ const Services: React.FC = () => {
       icon: Leaf,
       title: "Eco-Friendly Cleaning",
       description: "Green cleaning solutions using environmentally safe, non-toxic products that protect your family, pets, and the planet while delivering exceptional results.",
-      image: "https://images.pexels.com/photos/6195951/pexels-photo-6195951.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "eco.png",
       features: [
         "100% non-toxic cleaning products",
         "Safe for children and pets",
@@ -56,7 +56,7 @@ const Services: React.FC = () => {
       icon: Settings,
       title: "Custom Cleaning Solutions",
       description: "Specialized cleaning services tailored to your unique needs and schedule. Perfect for one-time deep cleans, move-ins/outs, and special events.",
-      image: "https://images.pexels.com/photos/6195967/pexels-photo-6195967.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "4.png",
       features: [
         "Move-in and move-out cleaning",
         "Post-construction cleanup",

@@ -9,25 +9,25 @@ const AboutSection: React.FC = () => {
       icon: Shield,
       title: "Trusted & Reliable",
       description: "Fully insured and bonded professional cleaners",
-      image: "https://images.pexels.com/photos/6195951/pexels-photo-6195951.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: "hero-2.png"
     },
     {
       icon: Users,
       title: "Trained Professionals",
       description: "Our team uses industry-leading techniques",
-      image: "https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: "residance.png"
     },
     {
       icon: Leaf,
       title: "Eco-Conscious",
       description: "Environmental-friendly products and methods",
-      image: "https://images.pexels.com/photos/6195967/pexels-photo-6195967.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: "eco.png"
     },
     {
       icon: Award,
       title: "Quality Guarantee",
       description: "100% satisfaction guaranteed on every service",
-      image: "https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: "4.png"
     }
   ];
 
