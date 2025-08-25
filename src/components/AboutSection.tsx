@@ -1,27 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Shield, Users, Leaf, Award } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
+  const [selectedFeature, setSelectedFeature] = useState(0);
+
   const features = [
     {
       icon: Shield,
       title: "Trusted & Reliable",
-      description: "Fully insured and bonded professional cleaners"
+      description: "Fully insured and bonded professional cleaners",
+      image: "https://images.pexels.com/photos/6195951/pexels-photo-6195951.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       icon: Users,
       title: "Trained Professionals",
-      description: "Our team uses industry-leading techniques"
+      description: "Our team uses industry-leading techniques",
+      image: "https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       icon: Leaf,
       title: "Eco-Conscious",
-      description: "Environmental-friendly products and methods"
+      description: "Environmental-friendly products and methods",
+      image: "https://images.pexels.com/photos/6195967/pexels-photo-6195967.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       icon: Award,
       title: "Quality Guarantee",
-      description: "100% satisfaction guaranteed on every service"
+      description: "100% satisfaction guaranteed on every service",
+      image: "https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
   ];
 
@@ -48,15 +54,24 @@ const AboutSection: React.FC = () => {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="flex items-start space-x-4 p-4 rounded-2xl hover:bg-lightBlue/10 transition-all duration-300 hover:scale-105"
+                  className={`flex items-start space-x-4 p-4 rounded-2xl transition-all duration-300 hover:scale-105 cursor-pointer ${
+                    selectedFeature === index 
+                      ? 'bg-primary/10 border-2 border-primary/20' 
+                      : 'hover:bg-lightBlue/10'
+                  }`}
+                  onClick={() => setSelectedFeature(index)}
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <feature.icon size={24} className="text-primary" />
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
+                      selectedFeature === index ? 'bg-primary text-white' : 'bg-primary/10 text-primary'
+                    }`}>
+                      <feature.icon size={24} />
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-ubuntu font-bold text-charcoal mb-2">
+                    <h3 className={`font-ubuntu font-bold mb-2 transition-colors duration-300 ${
+                      selectedFeature === index ? 'text-primary' : 'text-charcoal'
+                    }`}>
                       {feature.title}
                     </h3>
                     <p className="text-charcoal/70 font-openSans text-sm">
@@ -70,15 +85,23 @@ const AboutSection: React.FC = () => {
 
           {/* Right Image */}
           <div className="animate-fade-in">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl transition-all duration-500">
               <img
-                src="https://images.pexels.com/photos/6195951/pexels-photo-6195951.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Professional cleaning team"
-                className="w-full h-[500px] object-cover hover-scale"
+                src={features[selectedFeature].image}
+                alt={features[selectedFeature].title}
+                className="w-full h-[500px] object-cover hover-scale transition-all duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-white/95 backdrop-blur-sm px-6 py-4 rounded-2xl">
+                <div className="bg-white/95 backdrop-blur-sm px-6 py-4 rounded-2xl transition-all duration-300">
+                  <div className="mb-4">
+                    <h3 className="text-charcoal font-ubuntu font-bold text-xl mb-2">
+                      {features[selectedFeature].title}
+                    </h3>
+                    <p className="text-charcoal/70 font-openSans text-sm">
+                      {features[selectedFeature].description}
+                    </p>
+                  </div>
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-charcoal font-ubuntu font-bold text-xl">

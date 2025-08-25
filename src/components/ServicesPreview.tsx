@@ -49,7 +49,7 @@ const ServicesPreview: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in group"
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in group flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
@@ -64,7 +64,7 @@ const ServicesPreview: React.FC = () => {
                 {service.description}
               </p>
 
-              <ul className="space-y-2 mb-8">
+              <ul className="space-y-2 mb-8 flex-grow">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center text-sm text-charcoal/60 font-openSans">
                     <div className="w-1.5 h-1.5 bg-accent rounded-full mr-3"></div>
@@ -75,7 +75,7 @@ const ServicesPreview: React.FC = () => {
 
               <button
                 onClick={() => navigate('/quotation')}
-                className="w-full bg-primary text-white py-3 rounded-2xl font-openSans font-medium hover:bg-primary/90 transition-all duration-200 hover:scale-105"
+                className="w-full bg-primary text-white py-3 rounded-2xl font-openSans font-medium hover:bg-primary/90 transition-all duration-200 hover:scale-105 mt-auto"
               >
                 Get Quote
               </button>

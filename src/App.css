@@ -11,7 +11,7 @@
 }
 
 .fade-transition {
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-out;
 }
 
 .image-overlay {
@@ -34,4 +34,14 @@
 
 .image-overlay:hover::before {
   opacity: 1;
+}
+
+/* Smooth animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }

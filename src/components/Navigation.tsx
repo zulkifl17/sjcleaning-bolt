@@ -20,7 +20,7 @@ const Navigation: React.FC = () => {
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Quotation', path: '/quotation' },
-    { name: 'Contact', path: '#contact' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   const handleCallNow = () => {

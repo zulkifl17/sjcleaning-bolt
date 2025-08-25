@@ -104,19 +104,19 @@ const WorkShowcase: React.FC = () => {
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-fr">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {/* Large featured item */}
           <div 
             className="md:col-span-2 lg:col-span-2 md:row-span-2 cursor-pointer group"
             onClick={() => toggleImage(showcaseItems[0].id)}
           >
-            <div className="relative h-full min-h-[400px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+            <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
               <img
                 src={currentImages[showcaseItems[0].id] === 'before' 
                   ? showcaseItems[0].beforeImage 
                   : showcaseItems[0].afterImage}
                 alt={showcaseItems[0].title}
-                className="w-full h-full object-cover fade-transition"
+                className="w-full h-full object-cover fade-transition transition-opacity duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               
@@ -148,11 +148,11 @@ const WorkShowcase: React.FC = () => {
               className="cursor-pointer group"
               onClick={() => toggleImage(item.id)}
             >
-              <div className="relative h-full min-h-[250px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <div className="relative h-[250px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img
                   src={currentImages[item.id] === 'before' ? item.beforeImage : item.afterImage}
                   alt={item.title}
-                  className="w-full h-full object-cover fade-transition"
+                  className="w-full h-full object-cover fade-transition transition-opacity duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 
@@ -185,11 +185,11 @@ const WorkShowcase: React.FC = () => {
               className="cursor-pointer group"
               onClick={() => toggleImage(item.id)}
             >
-              <div className="relative h-full min-h-[200px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <div className="relative h-[200px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img
                   src={currentImages[item.id] === 'before' ? item.beforeImage : item.afterImage}
                   alt={item.title}
-                  className="w-full h-full object-cover fade-transition"
+                  className="w-full h-full object-cover fade-transition transition-opacity duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 

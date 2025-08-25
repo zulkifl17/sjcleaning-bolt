@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      
+      // Calculate relative position (-1 to 1)
+      const x = (clientX / innerWidth - 0.5) * 2;
+      const y = (clientY / innerHeight - 0.5) * 2;
+      
+      setMousePosition({ x, y });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
     <section className="bg-hero-gradient min-h-screen flex items-center py-20">
@@ -56,15 +73,20 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Right Image */}
-          <div className="animate-slide-up">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl hover-scale">
+          <div className="animate-slide-up relative">
+            <div 
+              className="relative rounded-3xl overflow-hidden shadow-2xl hover-scale transition-transform duration-300 ease-out"
+              style={{
+                transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px) translateY(${Math.sin(Date.now() * 0.001) * 5}px)`
+              }}
+            >
               <img
                 src="https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Professional cleaning service"
                 className="w-full h-[500px] lg:h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm px-6 py-4 rounded-2xl">
+              <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm px-6 py-4 rounded-2xl animate-pulse">
                 <p className="text-charcoal font-ubuntu font-bold text-lg">
                   Professional Cleaning
                 </p>
@@ -73,6 +95,21 @@ const HeroSection: React.FC = () => {
                 </p>
               </div>
             </div>
+            
+            {/* Floating elements */}
+            <div 
+              className="absolute -top-4 -right-4 w-20 h-20 bg-accent/30 rounded-full animate-pulse"
+              style={{
+                transform: `translate(${mousePosition.x * -5}px, ${mousePosition.y * -5}px)`
+              }}
+            ></div>
+            <div 
+              className="absolute -bottom-8 -left-8 w-16 h-16 bg-primary/20 rounded-full animate-pulse"
+              style={{
+                transform: `translate(${mousePosition.x * 8}px, ${mousePosition.y * 8}px)`,
+                animationDelay: '1s'
+              }}
+            ></div>
           </div>
         </div>
       </div>

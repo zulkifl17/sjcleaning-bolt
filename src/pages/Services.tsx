@@ -111,7 +111,7 @@ const Services: React.FC = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] animate-fade-in"
+                className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] animate-fade-in flex flex-col"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative h-64 image-overlay">
@@ -131,7 +131,7 @@ const Services: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-8">
+                <div className="p-8 flex flex-col flex-grow">
                   <p className="text-charcoal/80 font-openSans leading-relaxed mb-6">
                     {service.description}
                   </p>
@@ -155,7 +155,7 @@ const Services: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex gap-3">
+                  <div className="flex gap-3 mt-auto">
                     <button
                       onClick={() => navigate('/quotation')}
                       className="flex-1 bg-primary text-white py-3 rounded-2xl font-openSans font-medium hover:bg-primary/90 transition-all duration-200 hover:scale-105"

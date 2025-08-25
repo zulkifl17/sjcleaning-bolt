@@ -50,12 +50,12 @@ const Footer: React.FC = () => {
               >
                 Quotation
               </Link>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="block text-gray-300 hover:text-lightBlue transition-colors duration-200 font-openSans"
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
 
