@@ -10,25 +10,33 @@ const ServicesPreview: React.FC = () => {
       icon: Home,
       title: "Residential Cleaning",
       description: "Professional home cleaning services tailored to your needs. Regular maintenance or deep cleaning.",
-      features: ["Living rooms & bedrooms", "Kitchen deep clean", "Bathroom sanitization", "Custom scheduling"]
+      image: "residance.png",
+      features: ["Living rooms & bedrooms", "Kitchen deep clean", "Bathroom sanitization", "Custom scheduling"],
+      pricing: "Starting from $80/visit"
     },
     {
       icon: Building2,
       title: "Commercial Cleaning",
       description: "Comprehensive office and commercial space cleaning for businesses of all sizes.",
-      features: ["Office spaces", "Meeting rooms", "Washroom maintenance", "Floor care"]
+      image: "hero-3.png",
+      features: ["Office spaces", "Meeting rooms", "Washroom maintenance", "Floor care"],
+      pricing: "Custom quotes based on space size"
     },
     {
       icon: Leaf,
       title: "Eco-Friendly Cleaning",
       description: "Green cleaning solutions using environmentally safe products and methods.",
-      features: ["Non-toxic products", "Safe for pets & kids", "Biodegradable cleaners", "HEPA filtration"]
+      image: "eco.png",
+      features: ["Non-toxic products", "Safe for pets & kids", "Biodegradable cleaners", "HEPA filtration"],
+      pricing: "Same competitive rates as standard cleaning"
     },
     {
       icon: Settings,
       title: "Custom Cleaning",
       description: "Specialized cleaning services designed around your specific requirements and schedule.",
-      features: ["Move-in/out cleaning", "Post-construction", "Event cleaning", "One-time service"]
+      image: "4.png",
+      features: ["Move-in/out cleaning", "Post-construction", "Event cleaning", "One-time service"],
+      pricing: "Quoted based on specific requirements"
     }
   ];
 
@@ -45,40 +53,69 @@ const ServicesPreview: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in group flex flex-col"
+              className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] animate-fade-in flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                <service.icon size={32} className="text-primary" />
+              <div className="relative h-64 image-overlay">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-6 left-6">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
+                    <service.icon size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-white font-ubuntu font-bold text-2xl">
+                    {service.title}
+                  </h3>
+                </div>
               </div>
-              
-              <h3 className="text-xl font-ubuntu font-bold text-charcoal mb-4">
-                {service.title}
-              </h3>
-              
-              <p className="text-charcoal/70 font-openSans mb-6 leading-relaxed">
-                {service.description}
-              </p>
 
-              <ul className="space-y-2 mb-8 flex-grow">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-sm text-charcoal/60 font-openSans">
-                    <div className="w-1.5 h-1.5 bg-accent rounded-full mr-3"></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              <div className="p-8 flex flex-col flex-grow">
+                <p className="text-charcoal/80 font-openSans leading-relaxed mb-6">
+                  {service.description}
+                </p>
 
-              <button
-                onClick={() => navigate('/quotation')}
-                className="w-full bg-primary text-white py-3 rounded-2xl font-openSans font-medium hover:bg-primary/90 transition-all duration-200 hover:scale-105 mt-auto"
-              >
-                Get Quote
-              </button>
+                <div className="mb-6">
+                  <h4 className="font-ubuntu font-bold text-charcoal mb-4">What's Included:</h4>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-charcoal/70 font-openSans">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex items-center justify-between mb-6 p-4 bg-lightBlue/10 rounded-2xl">
+                  <div>
+                    <p className="text-sm text-charcoal/60 font-openSans">Pricing</p>
+                    <p className="font-ubuntu font-bold text-primary">{service.pricing}</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3 mt-auto">
+                  <button
+                    onClick={() => navigate('/quotation')}
+                    className="flex-1 bg-primary text-white py-3 rounded-2xl font-openSans font-medium hover:bg-primary/90 transition-all duration-200 hover:scale-105"
+                  >
+                    Get Free Quote
+                  </button>
+                  <button
+                    onClick={() => window.location.href = 'tel:+14168386535'}
+                    className="flex-1 bg-charcoal text-white py-3 rounded-2xl font-openSans font-medium hover:bg-charcoal/90 transition-all duration-200 hover:scale-105"
+                  >
+                    Call Now
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
         </div>
