@@ -66,7 +66,7 @@ const HeroSection: React.FC = () => {
   return (
     <section className="bg-hero-gradient min-h-screen flex items-center py-20 relative overflow-hidden z-100">
       {/* Background Image */}
-      <div
+      {/* <div
         className="absolute inset-0 opacity-50 pointer-events-none "
         style={{
           backgroundImage: 'url("/1.svg")',
@@ -87,7 +87,7 @@ const HeroSection: React.FC = () => {
         }
           })()
         }}
-      ></div>
+      ></div> */}
       <div 
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
