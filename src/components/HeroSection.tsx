@@ -67,9 +67,9 @@ const HeroSection: React.FC = () => {
     <section className="bg-hero-gradient min-h-screen flex items-center py-20 relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 opacity-10 pointer-events-none"
+        className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
-          backgroundImage: 'url("/hero-3.png")',
+          backgroundImage: 'url("/cleaning-hero-cover-2.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
