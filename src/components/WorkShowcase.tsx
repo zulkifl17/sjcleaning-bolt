@@ -13,40 +13,55 @@ const WorkShowcase: React.FC = () => {
   
   const showcaseItems: ShowcaseItem[] = [
     {
-      id: 1,
-      title: "Kitchen Deep Clean",
-      beforeImage: "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=600",
-      afterImage: "https://images.pexels.com/photos/1599791/pexels-photo-1599791.jpeg?auto=compress&cs=tinysrgb&w=600",
-      description: "Complete kitchen transformation with deep cleaning and sanitization"
-    },
-    {
-      id: 2,
-      title: "Living Room Revival",
-      beforeImage: "https://images.pexels.com/photos/4846428/pexels-photo-4846428.jpeg?auto=compress&cs=tinysrgb&w=600",
-      afterImage: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600",
-      description: "Furniture cleaning, carpet care, and complete room refresh"
-    },
-    {
-      id: 3,
-      title: "Bathroom Makeover",
-      beforeImage: "https://images.pexels.com/photos/6195967/pexels-photo-6195967.jpeg?auto=compress&cs=tinysrgb&w=600",
-      afterImage: "https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=600",
-      description: "Deep sanitization and restoration of bathroom surfaces"
-    },
-    {
-      id: 4,
-      title: "Office Space Clean",
-      beforeImage: "https://images.pexels.com/photos/7615461/pexels-photo-7615461.jpeg?auto=compress&cs=tinysrgb&w=600",
-      afterImage: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=600",
-      description: "Professional office cleaning for productive work environment"
-    },
-    {
-      id: 5,
-      title: "Bedroom Refresh",
-      beforeImage: "https://images.pexels.com/photos/6585599/pexels-photo-6585599.jpeg?auto=compress&cs=tinysrgb&w=600",
-      afterImage: "https://images.pexels.com/photos/1454808/pexels-photo-1454808.jpeg?auto=compress&cs=tinysrgb&w=600",
-      description: "Complete bedroom cleaning including mattress and carpet care"
-    }
+  id: 1,
+  title: "Kitchen Deep Clean",
+  beforeImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186154/sink2-before_lwzj8y.webp",
+  afterImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186153/sink2-after_mgehs2.webp",
+  description: "Complete kitchen transformation with deep cleaning and sanitization"
+},
+{
+  id: 2,
+  title: "Bathtub Cleaning",
+  beforeImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186152/tub-before_fbhm2t.webp",
+  afterImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186152/tub-after_gh5mkk.webp",
+  description: "Deep cleaning and restoration of bathtub surfaces"
+},
+{
+  id: 3,
+  title: "Comet Makeover",
+  beforeImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186158/comet2-before_j9fnkw.webp",
+  afterImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186159/comet2-after_xebpoj.webp",
+  description: "Complete comet cleaning and shine restoration"
+},
+{
+  id: 4,
+  title: "Bathroom with Shower Makeover",
+  beforeImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186160/bath-before_u9h1cb.webp",
+  afterImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186162/bath-after_t8ip3t.webp",
+  description: "Full bathroom deep clean including shower and tiles"
+},
+{
+  id: 5,
+  title: "Sink Cleaning",
+  beforeImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186152/sink-before_nbc0sj.webp",
+  afterImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186153/sink-after_vxtjia.webp",
+  description: "Detailed sink cleaning with shine and sanitization"
+},
+{
+  id: 6,
+  title: "Shower Cleaning",
+  beforeImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186154/shower-before_nn3chv.webp",
+  afterImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186155/shower-after_bagqyg.webp",
+  description: "Thorough shower deep clean including tiles, glass, and fixtures"
+},
+{
+  id: 7,
+  title: "Comet Cleaning",
+  beforeImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186157/comet-before_in6cfs.webp",
+  afterImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186158/comet-after_ciew2f.webp",
+  description: "Intensive comet surface cleaning for a spotless and refreshed look"
+}
+
   ];
 
   // Initialize all items to show 'before' images
