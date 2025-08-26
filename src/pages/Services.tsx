@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Home, Building2, Leaf, Settings, Phone, Sparkles } from 'lucide-react';
+import { Home, Building2, Leaf, Settings, Phone, Sparkles, Bed } from 'lucide-react';
 import WorkShowcase from '../components/WorkShowcase';
 
 const Services: React.FC = () => {
@@ -66,7 +66,23 @@ const Services: React.FC = () => {
         "Customized service packages"
       ],
       pricing: "Quoted based on specific requirements"
-    }
+    },
+    {
+  icon: Bed,
+  title: "Airbnb Cleaning",
+  description: "Dedicated short-term rental cleaning services to ensure your Airbnb property is always spotless, welcoming, and guest-ready with fast turnarounds between stays.",
+  image: "airbnb.png",
+  features: [
+    "Fresh linens and towel replacement",
+    "Bathroom sanitization and restocking essentials",
+    "Kitchen cleaning including appliances and surfaces",
+    "Dusting, vacuuming, and floor care",
+    "Trash removal and supply replenishment",
+    "Quick turnaround for same-day check-ins"
+  ],
+  pricing: "Quoted based on specific requirements"
+}
+
   ];
 
   const handleCallNow = () => {

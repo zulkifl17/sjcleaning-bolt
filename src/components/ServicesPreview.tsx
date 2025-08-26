@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Home, Building2, Leaf, Settings, ArrowRight } from 'lucide-react';
+import { Home, Building2, Leaf, Settings, ArrowRight, Bed } from 'lucide-react';
 
 const ServicesPreview: React.FC = () => {
   const navigate = useNavigate();
@@ -37,7 +37,21 @@ const ServicesPreview: React.FC = () => {
       image: "4.png",
       features: ["Move-in/out cleaning", "Post-construction", "Event cleaning", "One-time service"],
       pricing: "Quoted based on specific requirements"
-    }
+    },
+    {
+  icon: Bed,
+  title: "Airbnb Cleaning",
+  description: "Fast, reliable, and detailed cleaning designed for Airbnb hosts to keep properties guest-ready.",
+  image: "airbnb.png",
+  features: [
+    "Fresh linens & towel replacement",
+    "Kitchen & bathroom sanitization",
+    "Dusting & vacuuming",
+    "Quick turnaround service"
+  ],
+  pricing: "Starting from $100/visit"
+}
+
   ];
 
   return (

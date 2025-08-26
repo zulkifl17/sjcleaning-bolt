@@ -29,9 +29,10 @@ const Quotation: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     cleaningType: '',
     residential: {
-      livingRooms: 0,
+
       bedrooms: 0,
       bathrooms: 0,
+      livingRooms: 0,
       kitchens: 0,
       otherRooms: []
     },
@@ -253,9 +254,10 @@ const Quotation: React.FC = () => {
                 <div className="space-y-8">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
-                      { key: 'livingRooms', label: 'Living Rooms' },
+                     
                       { key: 'bedrooms', label: 'Bedrooms' },
                       { key: 'bathrooms', label: 'Bathrooms' },
+                       { key: 'livingRooms', label: 'Living Rooms' },
                       { key: 'kitchens', label: 'Kitchens' }
                     ].map(({ key, label }) => (
                       <div key={key} className="text-center">
