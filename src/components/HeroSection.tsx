@@ -64,8 +64,30 @@ const HeroSection: React.FC = () => {
   const currentPosition = isMobile ? gyroPosition : mousePosition;
 
   return (
-    <section className="bg-hero-gradient min-h-screen flex items-center py-20 relative overflow-hidden">
+    <section className="bg-hero-gradient min-h-screen flex items-center py-20 relative overflow-hidden z-100">
       {/* Background Image */}
+      <div
+        className="absolute inset-0 opacity-50 pointer-events-none "
+        style={{
+          backgroundImage: 'url("/1.svg")',
+          backgroundPosition: 'bottom',
+          backgroundRepeat: 'no-repeat',
+          // Responsive transform based on screen size
+          transform: (() => {
+        const width = window.innerWidth;
+        if (width >= 1024) {
+          // Large screens (lg+)
+          return 'translate(0px, -374px) scale(1.8)';
+        } else if (width >= 640) {
+          // Medium screens (sm/md)
+          return 'translate(0px, -395px) scale(1.8)';
+        } else {
+          // Small screens
+          return 'translate(0px, -65px) scale(1.1)';
+        }
+          })()
+        }}
+      ></div>
       <div 
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
