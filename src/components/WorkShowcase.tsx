@@ -56,10 +56,10 @@ const WorkShowcase: React.FC = () => {
 },
 {
   id: 7,
-  title: "Comet Cleaning",
+  title: "Commed Cleaning",
   beforeImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186157/comet-before_in6cfs.webp",
   afterImage: "https://res.cloudinary.com/dykrkjlml/image/upload/v1756186158/comet-after_ciew2f.webp",
-  description: "Intensive comet surface cleaning for a spotless and refreshed look"
+  description: "Intensive Commed surface cleaning for a spotless and refreshed look"
 }
 
   ];

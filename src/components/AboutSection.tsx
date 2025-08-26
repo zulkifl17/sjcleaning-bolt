@@ -57,7 +57,7 @@ const AboutSection: React.FC = () => {
                   className={`flex items-start space-x-4 p-4 rounded-2xl transition-all duration-300 hover:scale-105 cursor-pointer ${
                     selectedFeature === index 
                       ? 'bg-primary/10 border-2 border-primary/20' 
-                      : 'hover:bg-lightBlue/10'
+                      : 'hover:bg-lightBlue/10 border-2 border-primary/10'
                   }`}
                   onClick={() => setSelectedFeature(index)}
                 >
