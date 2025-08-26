@@ -34,7 +34,7 @@ const Navigation: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="flex justify-between items-center h-16 lg:h-20 relative">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="text-2xl lg:text-3xl font-ubuntu font-bold text-primary">
@@ -44,6 +44,24 @@ const Navigation: React.FC = () => {
               CLEANING
             </div>
           </Link>
+
+          {/* Center Logo Image */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 hidden md:block lg:block">
+            <img
+              src="/1.png"
+              alt="SJ Pro Cleaning Logo"
+              className="h-16 lg:h-20 w-auto object-contain"
+            />
+          </div>
+
+          {/* Center Logo Image for Mobile/Tablet */}
+          <div className="flex-1 flex justify-center md:hidden">
+            <img
+              src="/1.png"
+              alt="SJ Pro Cleaning Logo"
+              className="h-12 w-auto object-contain"
+            />
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

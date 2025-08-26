@@ -5,8 +5,18 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [gyroPosition, setGyroPosition] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       const { innerWidth, innerHeight } = window;
@@ -18,12 +28,67 @@ const HeroSection: React.FC = () => {
       setMousePosition({ x, y });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    // Gyroscope handler for mobile
+    const handleDeviceOrientation = (e: DeviceOrientationEvent) => {
+      if (e.gamma !== null && e.beta !== null) {
+        // Normalize gamma (-90 to 90) and beta (-180 to 180) to (-1 to 1)
+        const x = Math.max(-1, Math.min(1, e.gamma / 45));
+        const y = Math.max(-1, Math.min(1, e.beta / 90));
+        setGyroPosition({ x, y });
+      }
+    };
+
+    if (!isMobile) {
+      window.addEventListener('mousemove', handleMouseMove);
+    } else {
+      // Request permission for iOS devices
+      if (typeof (DeviceOrientationEvent as any).requestPermission === 'function') {
+        (DeviceOrientationEvent as any).requestPermission()
+          .then((response: string) => {
+            if (response === 'granted') {
+              window.addEventListener('deviceorientation', handleDeviceOrientation);
+            }
+          });
+      } else {
+        window.addEventListener('deviceorientation', handleDeviceOrientation);
+      }
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('deviceorientation', handleDeviceOrientation);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
+  const currentPosition = isMobile ? gyroPosition : mousePosition;
+
   return (
-    <section className="bg-hero-gradient min-h-screen flex items-center py-20">
+    <section className="bg-hero-gradient min-h-screen flex items-center py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage: 'url("/hero-3.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          transform: `translate(${currentPosition.x * 20}px, ${currentPosition.y * 20}px) scale(1.1)`
+        }}
+      ></div>
+      
+      {/* Floating Background Image - Top Right */}
+      <div 
+        className="absolute top-10 right-10 w-32 h-32 lg:w-48 lg:h-48 opacity-5 pointer-events-none hidden md:block"
+        style={{
+          backgroundImage: 'url("/hero-3.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          transform: `translate(${currentPosition.x * 30}px, ${currentPosition.y * 30}px) rotate(${currentPosition.x * 5}deg)`
+        }}
+      ></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -77,7 +142,7 @@ const HeroSection: React.FC = () => {
             <div 
               className="relative rounded-3xl overflow-hidden shadow-2xl hover-scale transition-transform duration-300 ease-out"
               style={{
-                transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px) translateY(${Math.sin(Date.now() * 0.001) * 5}px)`
+                transform: `translate(${currentPosition.x * 10}px, ${currentPosition.y * 10}px) translateY(${Math.sin(Date.now() * 0.001) * 5}px)`
               }}
             >
               <img
@@ -100,13 +165,13 @@ const HeroSection: React.FC = () => {
             <div 
               className="absolute -top-4 -right-4 w-20 h-20 bg-accent/30 rounded-full animate-pulse"
               style={{
-                transform: `translate(${mousePosition.x * -5}px, ${mousePosition.y * -5}px)`
+                transform: `translate(${currentPosition.x * -5}px, ${currentPosition.y * -5}px)`
               }}
             ></div>
             <div 
               className="absolute -bottom-8 -left-8 w-16 h-16 bg-primary/20 rounded-full animate-pulse"
               style={{
-                transform: `translate(${mousePosition.x * 8}px, ${mousePosition.y * 8}px)`,
+                transform: `translate(${currentPosition.x * 8}px, ${currentPosition.y * 8}px)`,
                 animationDelay: '1s'
               }}
             ></div>
