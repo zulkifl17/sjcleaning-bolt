@@ -51,7 +51,7 @@ const Navigation: React.FC = () => {
             </Link>
 
             {/* Center Logo Image - Desktop */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 hidden lg:block">
+            <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 md:left-[38%]  hidden lg:block">
               <img
                 src="/1.png"
                 alt="SJ Pro Cleaning Logo"
@@ -60,7 +60,7 @@ const Navigation: React.FC = () => {
             </div>
 
             {/* Center Logo Image - Tablet/Mobile */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 lg:hidden">
+            <div className="absolute  transform -translate-x-1/2 left-[70%] sm:left-[60%]  bottom-0 lg:hidden">
               <img
                 src="/1.png"
                 alt="SJ Pro Cleaning Logo"
