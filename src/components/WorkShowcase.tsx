@@ -126,32 +126,42 @@ const WorkShowcase: React.FC = () => {
             onClick={() => toggleImage(showcaseItems[0].id)}
           >
             <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+              {/* Both images stacked, crossfade on toggle */}
               <img
-                src={currentImages[showcaseItems[0].id] === 'before' 
-                  ? showcaseItems[0].beforeImage 
-                  : showcaseItems[0].afterImage}
-                alt={showcaseItems[0].title}
-                className="w-full h-full object-cover fade-transition transition-opacity duration-500"
+              src={showcaseItems[0].beforeImage}
+              alt={showcaseItems[0].title + " before"}
+              className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
+                currentImages[showcaseItems[0].id] === 'before' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
+              style={{ transitionProperty: 'opacity' }}
+              />
+              <img
+              src={showcaseItems[0].afterImage}
+              alt={showcaseItems[0].title + " after"}
+              className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
+                currentImages[showcaseItems[0].id] === 'after' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
+              style={{ transitionProperty: 'opacity' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               
               <div className="absolute top-4 right-4">
-                <div className={`px-3 py-1 rounded-full text-xs font-medium ${
-                  currentImages[showcaseItems[0].id] === 'before' 
-                    ? 'bg-red-100 text-red-600' 
-                    : 'bg-green-100 text-green-600'
-                }`}>
-                  {currentImages[showcaseItems[0].id] === 'before' ? 'BEFORE' : 'AFTER'}
-                </div>
+              <div className={`px-3 py-1 rounded-full text-xs font-medium ${
+                currentImages[showcaseItems[0].id] === 'before' 
+                ? 'bg-red-100 text-red-600' 
+                : 'bg-green-100 text-green-600'
+              }`}>
+                {currentImages[showcaseItems[0].id] === 'before' ? 'BEFORE' : 'AFTER'}
+              </div>
               </div>
 
               <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-white font-ubuntu font-bold text-xl mb-2">
-                  {showcaseItems[0].title}
-                </h3>
-                <p className="text-white/90 font-openSans text-sm">
-                  {showcaseItems[0].description}
-                </p>
+              <h3 className="text-white font-ubuntu font-bold text-xl mb-2">
+                {showcaseItems[0].title}
+              </h3>
+              <p className="text-white/90 font-openSans text-sm">
+                {showcaseItems[0].description}
+              </p>
               </div>
             </div>
           </div>
@@ -163,33 +173,45 @@ const WorkShowcase: React.FC = () => {
               className="cursor-pointer group"
               onClick={() => toggleImage(item.id)}
             >
-              <div className="relative h-[250px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="relative h-[250px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                {/* Both images stacked, crossfade on toggle */}
                 <img
-                  src={currentImages[item.id] === 'before' ? item.beforeImage : item.afterImage}
-                  alt={item.title}
-                  className="w-full h-full object-cover fade-transition transition-opacity duration-500"
+                  src={item.beforeImage}
+                  alt={item.title + " before"}
+                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
+                  currentImages[item.id] === 'before' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
+                  style={{ transitionProperty: 'opacity' }}
+                />
+                <img
+                  src={item.afterImage}
+                  alt={item.title + " after"}
+                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
+                  currentImages[item.id] === 'after' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
+                  style={{ transitionProperty: 'opacity' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 
                 <div className="absolute top-3 right-3">
                   <div className={`px-2 py-1 rounded-full text-xs font-medium ${
-                    currentImages[item.id] === 'before' 
-                      ? 'bg-red-100 text-red-600' 
-                      : 'bg-green-100 text-green-600'
+                  currentImages[item.id] === 'before' 
+                    ? 'bg-red-100 text-red-600' 
+                    : 'bg-green-100 text-green-600'
                   }`}>
-                    {currentImages[item.id] === 'before' ? 'BEFORE' : 'AFTER'}
+                  {currentImages[item.id] === 'before' ? 'BEFORE' : 'AFTER'}
                   </div>
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-white font-ubuntu font-bold text-lg mb-1">
-                    {item.title}
+                  {item.title}
                   </h3>
                   <p className="text-white/80 font-openSans text-xs">
-                    {item.description}
+                  {item.description}
                   </p>
                 </div>
-              </div>
+                </div>
             </div>
           ))}
 
@@ -200,33 +222,45 @@ const WorkShowcase: React.FC = () => {
               className="cursor-pointer group"
               onClick={() => toggleImage(item.id)}
             >
-              <div className="relative h-[200px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="relative h-[200px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                {/* Both images stacked, crossfade on toggle */}
                 <img
-                  src={currentImages[item.id] === 'before' ? item.beforeImage : item.afterImage}
-                  alt={item.title}
-                  className="w-full h-full object-cover fade-transition transition-opacity duration-500"
+                  src={item.beforeImage}
+                  alt={item.title + " before"}
+                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
+                  currentImages[item.id] === 'before' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
+                  style={{ transitionProperty: 'opacity' }}
+                />
+                <img
+                  src={item.afterImage}
+                  alt={item.title + " after"}
+                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
+                  currentImages[item.id] === 'after' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
+                  style={{ transitionProperty: 'opacity' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 
                 <div className="absolute top-3 right-3">
                   <div className={`px-2 py-1 rounded-full text-xs font-medium ${
-                    currentImages[item.id] === 'before' 
-                      ? 'bg-red-100 text-red-600' 
-                      : 'bg-green-100 text-green-600'
+                  currentImages[item.id] === 'before' 
+                    ? 'bg-red-100 text-red-600' 
+                    : 'bg-green-100 text-green-600'
                   }`}>
-                    {currentImages[item.id] === 'before' ? 'BEFORE' : 'AFTER'}
+                  {currentImages[item.id] === 'before' ? 'BEFORE' : 'AFTER'}
                   </div>
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-white font-ubuntu font-bold text-sm mb-1">
-                    {item.title}
+                  {item.title}
                   </h3>
                   <p className="text-white/80 font-openSans text-xs">
-                    Click to toggle
+                  Click to toggle
                   </p>
                 </div>
-              </div>
+                </div>
             </div>
           ))}
         </div>
