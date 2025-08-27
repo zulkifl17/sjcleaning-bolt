@@ -83,13 +83,13 @@ const AboutSection: React.FC = () => {
                   </div>
 
                   {/* Mobile Layout */}
-                  <div className="flex sm:hidden flex-col items-center justify-center text-center w-full h-full py-2">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
-                      selectedFeature === index ? 'bg-primary text-white' : 'bg-primary/10 text-primary'
+                  <div className="flex sm:hidden flex-row items-center justify-center text-left w-[80%] h-full ">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300 ${
+                      selectedFeature === index ? ' text-primary' : ' text-primary'
                     }`}>
-                      <feature.icon size={24} />
+                      <feature.icon size={18} />
                     </div>
-                    <h3 className={`font-ubuntu font-bold mt-3 text-sm leading-tight transition-colors duration-300 ${
+                    <h3 className={`font-ubuntu font-bold mt-3 text-sm leading-tight transition-colors duration-300 pl-2 ${
                       selectedFeature === index ? 'text-primary' : 'text-charcoal'
                     }`}>
                       {feature.title}
