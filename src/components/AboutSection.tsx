@@ -54,7 +54,7 @@ const AboutSection: React.FC = () => {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className={`flex items-start space-x-4 p-4 rounded-2xl transition-all duration-300 hover:scale-105 cursor-pointer ${
+                  className={`flex items-start space-x-4 sm:p-4 pb-2  rounded-2xl transition-all duration-300 hover:scale-105 cursor-pointer ${
                     selectedFeature === index 
                       ? 'bg-primary/10 border-2 border-primary/20' 
                       : 'hover:bg-lightBlue/10 border-2 border-primary/10'
