@@ -50,7 +50,7 @@ const AboutSection: React.FC = () => {
               products to ensure every space is spotless, safe, and welcoming.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-6">
               {features.map((feature, index) => (
                 <div
                   key={index}
