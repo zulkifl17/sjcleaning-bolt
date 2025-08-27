@@ -89,7 +89,7 @@ const HeroSection: React.FC = () => {
         }}
       ></div> */}
       <div 
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="absolute inset-0 opacity-15 pointer-events-none"
         style={{
           backgroundImage: 'url("/cleaning-hero-cover-2.png")',
           backgroundSize: 'cover',

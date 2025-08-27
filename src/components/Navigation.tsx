@@ -60,9 +60,9 @@ const Navigation: React.FC = () => {
             </div>
 
             {/* Center Logo Image - Tablet/Mobile */}
-            <div className="absolute  transform -translate-x-1/2 left-[70%] sm:left-[60%]  bottom-0 lg:hidden">
+            <div className="absolute  transform -translate-x-1/2 left-[70%] sm:left-[65%]  bottom-0 lg:hidden">
               <img
-                src="/1.png"
+                src="/torronto-1.png"
                 alt="SJ Pro Cleaning Logo"
                 className="h-12 md:h-14 w-auto object-contain"
               />
