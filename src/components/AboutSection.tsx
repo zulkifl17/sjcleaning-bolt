@@ -61,22 +61,39 @@ const AboutSection: React.FC = () => {
                   }`}
                   onClick={() => setSelectedFeature(index)}
                 >
-                  <div className="flex-shrink-0">
+                  {/* Desktop Layout */}
+                  <div className="hidden sm:flex items-start space-x-4 w-full">
+                    <div className="flex-shrink-0">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
+                        selectedFeature === index ? 'bg-primary text-white' : 'bg-primary/10 text-primary'
+                      }`}>
+                        <feature.icon size={24} />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className={`font-ubuntu font-bold mb-2 transition-colors duration-300 ${
+                        selectedFeature === index ? 'text-primary' : 'text-charcoal'
+                      }`}>
+                        {feature.title}
+                      </h3>
+                      <p className="text-charcoal/70 font-openSans text-sm">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Mobile Layout */}
+                  <div className="flex sm:hidden flex-col items-center justify-center text-center w-full h-full py-2">
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
                       selectedFeature === index ? 'bg-primary text-white' : 'bg-primary/10 text-primary'
                     }`}>
                       <feature.icon size={24} />
                     </div>
-                  </div>
-                  <div>
-                    <h3 className={`font-ubuntu font-bold mb-2 transition-colors duration-300 ${
+                    <h3 className={`font-ubuntu font-bold mt-3 text-sm leading-tight transition-colors duration-300 ${
                       selectedFeature === index ? 'text-primary' : 'text-charcoal'
                     }`}>
                       {feature.title}
                     </h3>
-                    <p className="text-charcoal/70 font-openSans text-sm">
-                      {feature.description}
-                    </p>
                   </div>
                 </div>
               ))}
