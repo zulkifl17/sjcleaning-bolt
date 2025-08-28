@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { SiTiktok } from 'react-icons/si';
 
 const Footer: React.FC = () => {
   return (
@@ -94,22 +95,40 @@ const Footer: React.FC = () => {
             {/* Social Links */}
             <div className="flex space-x-4 mt-6">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1Awo55YMGj/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-lightBlue transition-colors duration-200 hover:scale-110 transform"
+                aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/sj_cleaning_srvices/profilecard/?igsh=YTVnOWt0eDZqemx6"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-lightBlue transition-colors duration-200 hover:scale-110 transform"
+                aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/sj-cleaning-services-599a1137a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-lightBlue transition-colors duration-200 hover:scale-110 transform"
+                aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@sj.cleaning27?_t=ZS-8z4qADzJzCT&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-lightBlue transition-colors duration-200 hover:scale-110 transform"
+                aria-label="TikTok"
+              >
+                <SiTiktok size={20} />
               </a>
             </div>
           </div>
@@ -117,7 +136,9 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-600 mt-8 pt-8 text-center">
           <p className="text-gray-400 font-openSans">
-            © 2025 SJ Pro Cleaning Services. All rights reserved.
+            © 2025 SJ Pro Cleaning Services. All rights reserved.<br />
+            <span className="text-gray-500">Designed and developed by </span>
+            <a href="https://zulkifl.tech" target="_blank" rel="noopener noreferrer" className="text-lightBlue hover:underline font-semibold">Zulkifl Ajmal</a>
           </p>
         </div>
       </div>
