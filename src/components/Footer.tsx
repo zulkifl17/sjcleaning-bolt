@@ -78,10 +78,10 @@ const Footer: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-lightBlue" />
                 <a
-                  href="mailto:info@sjcleaning.ca"
+                  href="mailto:info@sjprocleaning.ca"
                   className="text-gray-300 hover:text-lightBlue transition-colors duration-200 font-openSans"
                 >
-                  info@sjcleaning.ca
+                  info@sjprocleaning.ca
                 </a>
               </div>
               <div className="flex items-center space-x-3">
