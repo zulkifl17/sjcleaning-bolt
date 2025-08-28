@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, MapPin, MessageCircle, User, Send, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const Contact: React.FC = () => {
@@ -52,7 +53,17 @@ Please get back to me at your earliest convenience. Thank you!`;
   };
 
   return (
-    <div className="pt-16 lg:pt-20 min-h-screen bg-gradient-to-br from-skyBlue to-lightBlue">
+    <>
+      <Helmet>
+        <title>Contact SJ Pro Cleaning Services Toronto | Free Quote | (416) 838-6535</title>
+        <meta name="description" content="Contact SJ Pro Cleaning Services in Toronto for professional residential and commercial cleaning. Call (416) 838-6535 for free quotes. Located in North York, Ontario." />
+        <meta name="keywords" content="contact cleaning services Toronto, cleaning company Toronto phone number, SJ Pro Cleaning contact, Toronto cleaning services quote, North York cleaning services" />
+        <link rel="canonical" href="https://sjprocleaning.ca/contact" />
+        <meta property="og:title" content="Contact SJ Pro Cleaning Services Toronto | Free Quote" />
+        <meta property="og:description" content="Contact SJ Pro Cleaning Services in Toronto for professional residential and commercial cleaning. Call (416) 838-6535 for free quotes." />
+        <meta property="og:url" content="https://sjprocleaning.ca/contact" />
+      </Helmet>
+      <div className="pt-16 lg:pt-20 min-h-screen bg-gradient-to-br from-skyBlue to-lightBlue">
       {/* Hero Banner */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -308,7 +319,8 @@ Please get back to me at your earliest convenience. Thank you!`;
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

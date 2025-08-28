@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Home, Building2, ArrowRight, ArrowLeft, User, Phone, Mail, MessageCircle } from 'lucide-react';
 
 interface FormData {
@@ -142,7 +143,17 @@ const Quotation: React.FC = () => {
   const prevStep = () => setStep(step - 1);
 
   return (
-    <div className="pt-16 lg:pt-20 min-h-screen bg-lightBlue/5">
+    <>
+      <Helmet>
+        <title>Free Cleaning Quote Toronto | SJ Pro Cleaning Services | Get Instant Quote</title>
+        <meta name="description" content="Get a free cleaning quote in Toronto from SJ Pro Cleaning Services. Instant quotes for residential and commercial cleaning. Professional cleaners serving Toronto and GTA." />
+        <meta name="keywords" content="free cleaning quote Toronto, cleaning services quote, residential cleaning quote Toronto, commercial cleaning quote, Toronto cleaning estimate, SJ Pro Cleaning quote" />
+        <link rel="canonical" href="https://sjprocleaning.ca/quotation" />
+        <meta property="og:title" content="Free Cleaning Quote Toronto | SJ Pro Cleaning Services" />
+        <meta property="og:description" content="Get a free cleaning quote in Toronto from SJ Pro Cleaning Services. Instant quotes for residential and commercial cleaning." />
+        <meta property="og:url" content="https://sjprocleaning.ca/quotation" />
+      </Helmet>
+      <div className="pt-16 lg:pt-20 min-h-screen bg-lightBlue/5">
       {/* Header */}
       <section className="bg-hero-gradient py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -554,7 +565,8 @@ const Quotation: React.FC = () => {
           )}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

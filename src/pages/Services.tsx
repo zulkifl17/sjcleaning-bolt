@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { Home, Building2, Leaf, Settings, Phone, Sparkles, Bed } from 'lucide-react';
 import WorkShowcase from '../components/WorkShowcase';
@@ -90,7 +91,17 @@ const Services: React.FC = () => {
   };
 
   return (
-    <div className="pt-16 lg:pt-20">
+    <>
+      <Helmet>
+        <title>Cleaning Services Toronto | Residential & Commercial | SJ Pro Cleaning</title>
+        <meta name="description" content="Professional residential and commercial cleaning services in Toronto. House cleaning, office cleaning, eco-friendly solutions, and Airbnb cleaning. Free quotes available." />
+        <meta name="keywords" content="cleaning services Toronto, residential cleaning, commercial cleaning, house cleaning Toronto, office cleaning Toronto, eco-friendly cleaning, Airbnb cleaning Toronto, professional cleaners" />
+        <link rel="canonical" href="https://sjprocleaning.ca/services" />
+        <meta property="og:title" content="Cleaning Services Toronto | Residential & Commercial | SJ Pro Cleaning" />
+        <meta property="og:description" content="Professional residential and commercial cleaning services in Toronto. House cleaning, office cleaning, eco-friendly solutions, and Airbnb cleaning." />
+        <meta property="og:url" content="https://sjprocleaning.ca/services" />
+      </Helmet>
+      <div className="pt-16 lg:pt-20">
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -221,7 +232,8 @@ const Services: React.FC = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
