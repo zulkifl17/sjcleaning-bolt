@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, MapPin, MessageCircle, User, Send, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { SiTiktok } from 'react-icons/si';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -165,22 +166,40 @@ Please get back to me at your earliest convenience. Thank you!`;
                   <h3 className="font-ubuntu font-bold text-charcoal mb-6">Follow Us</h3>
                   <div className="flex space-x-4">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/share/1Awo55YMGj/?mibextid=wwXIfr"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                      aria-label="Facebook"
                     >
                       <Facebook size={20} />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.instagram.com/sj_cleaning_srvices/profilecard/?igsh=YTVnOWt0eDZqemx6"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                      aria-label="Instagram"
                     >
                       <Instagram size={20} />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/in/sj-cleaning-services-599a1137a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                      aria-label="LinkedIn"
                     >
                       <Linkedin size={20} />
+                    </a>
+                    <a
+                      href="https://www.tiktok.com/@sj.cleaning27?_t=ZS-8z4qADzJzCT&_r=1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                      aria-label="TikTok"
+                    >
+                      <SiTiktok size={20} />
                     </a>
                   </div>
                 </div>
