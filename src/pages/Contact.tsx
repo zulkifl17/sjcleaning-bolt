@@ -118,9 +118,18 @@ Please get back to me at your earliest convenience. Thank you!`;
                     </div>
                     <div>
                       <h3 className="font-ubuntu font-bold text-charcoal mb-1">Email</h3>
-                      <p className="text-primary font-openSans font-medium hover:underline">
+                      <a
+                        href="mailto:sjprocleaningservices@gmail.com"
+                        className="text-primary font-openSans font-medium hover:underline block"
+                      >
                         sjprocleaningservices@gmail.com
-                      </p>
+                      </a>
+                      <a
+                        href="mailto:info@sjprocleaning.ca"
+                        className="text-primary font-openSans font-medium hover:underline block"
+                      >
+                        info@sjprocleaning.ca
+                      </a>
                       <p className="text-charcoal/60 font-openSans text-sm">Click to send email</p>
                     </div>
                   </div>
