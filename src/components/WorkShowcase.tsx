@@ -126,22 +126,24 @@ const WorkShowcase: React.FC = () => {
             onClick={() => toggleImage(showcaseItems[0].id)}
           >
             <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
-              {/* Both images stacked, crossfade on toggle */}
+              {/* Optimized image crossfade with preloading */}
               <img
-              src={showcaseItems[0].beforeImage}
-              alt={showcaseItems[0].title + " before"}
-              className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
-                currentImages[showcaseItems[0].id] === 'before' ? 'opacity-100 z-10' : 'opacity-0 z-0'
-              }`}
-              style={{ transitionProperty: 'opacity' }}
+                src={showcaseItems[0].beforeImage}
+                alt={showcaseItems[0].title + " before"}
+                className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  currentImages[showcaseItems[0].id] === 'before' ? 'opacity-100' : 'opacity-0'
+                }`}
+                loading="eager"
+                style={{ willChange: 'opacity' }}
               />
               <img
-              src={showcaseItems[0].afterImage}
-              alt={showcaseItems[0].title + " after"}
-              className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
-                currentImages[showcaseItems[0].id] === 'after' ? 'opacity-100 z-10' : 'opacity-0 z-0'
-              }`}
-              style={{ transitionProperty: 'opacity' }}
+                src={showcaseItems[0].afterImage}
+                alt={showcaseItems[0].title + " after"}
+                className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  currentImages[showcaseItems[0].id] === 'after' ? 'opacity-100' : 'opacity-0'
+                }`}
+                loading="eager"
+                style={{ willChange: 'opacity' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               
@@ -174,22 +176,24 @@ const WorkShowcase: React.FC = () => {
               onClick={() => toggleImage(item.id)}
             >
                 <div className="relative h-[250px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                {/* Both images stacked, crossfade on toggle */}
+                {/* Optimized image crossfade */}
                 <img
                   src={item.beforeImage}
                   alt={item.title + " before"}
-                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
-                  currentImages[item.id] === 'before' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  currentImages[item.id] === 'before' ? 'opacity-100' : 'opacity-0'
                   }`}
-                  style={{ transitionProperty: 'opacity' }}
+                  loading="eager"
+                  style={{ willChange: 'opacity' }}
                 />
                 <img
                   src={item.afterImage}
                   alt={item.title + " after"}
-                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
-                  currentImages[item.id] === 'after' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  currentImages[item.id] === 'after' ? 'opacity-100' : 'opacity-0'
                   }`}
-                  style={{ transitionProperty: 'opacity' }}
+                  loading="eager"
+                  style={{ willChange: 'opacity' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 
@@ -223,22 +227,24 @@ const WorkShowcase: React.FC = () => {
               onClick={() => toggleImage(item.id)}
             >
                 <div className="relative h-[200px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                {/* Both images stacked, crossfade on toggle */}
+                {/* Optimized image crossfade */}
                 <img
                   src={item.beforeImage}
                   alt={item.title + " before"}
-                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
-                  currentImages[item.id] === 'before' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  currentImages[item.id] === 'before' ? 'opacity-100' : 'opacity-0'
                   }`}
-                  style={{ transitionProperty: 'opacity' }}
+                  loading="eager"
+                  style={{ willChange: 'opacity' }}
                 />
                 <img
                   src={item.afterImage}
                   alt={item.title + " after"}
-                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
-                  currentImages[item.id] === 'after' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  currentImages[item.id] === 'after' ? 'opacity-100' : 'opacity-0'
                   }`}
-                  style={{ transitionProperty: 'opacity' }}
+                  loading="eager"
+                  style={{ willChange: 'opacity' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 

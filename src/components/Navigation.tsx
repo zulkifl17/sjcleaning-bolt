@@ -46,7 +46,7 @@ const Navigation: React.FC = () => {
                 />
               </div>
               <div className="text-xl lg:text-2xl font-ubuntu font-bold text-charcoal">
-                SJ Pro Cleaning
+                <span className="text-primary">SJ Pro</span> Cleaning
               </div>
             </Link>
 
